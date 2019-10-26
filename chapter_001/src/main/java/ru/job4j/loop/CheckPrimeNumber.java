@@ -8,6 +8,9 @@ public class CheckPrimeNumber {
                 if (num % i == 0) {
                     prime = false;
                 }
+                if (num == 2) {
+                    prime = true;
+                }
             } else if (num % 1 == 0 && num % i == 0) {
                 prime = true;
             }
