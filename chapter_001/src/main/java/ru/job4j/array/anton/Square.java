@@ -1,4 +1,4 @@
-package ru.job4j.array;
+package ru.job4j.array.anton;
 
 public class Square {
     public int[] calculate(int bound) {
