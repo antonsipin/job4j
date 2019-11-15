@@ -3,17 +3,16 @@ package ru.job4j.array.anton;
 public class Defragment {
     public static String[] compress(String[] array) {
         for (int i = 0; i < array.length; i++) {
-            String cell = array[i];
-            int j;
-            if (cell == null) {
-                j = i;
-                while (array[j] == null && j < array.length - 1) {
-                    j++;
-                    array[i] = array[j];
+            if (array[i] == null) {
+                for (int j = i; j < array.length ; j++) {
+                    if (array[j] != null) {
+                        array[i] = array[j];
+                        array[j] = null;
+                        break;
+                    }
                 }
-                array[j] = cell;
+                System.out.print(array[i] + " ");
             }
-            System.out.print(array[i] + " ");
         }
         return array;
     }
