@@ -53,7 +53,7 @@ public class FindLoopTest {
     @Test
     public void whenSort5() {
         int[] input = new int[]{3, 4, 1, 2, 5};
-        int result[] = sort(input);
+        int[] result = sort(input);
         int[] expect = new int[]{1, 2, 3, 4, 5};
         assertThat(result, is(expect));
     }
@@ -61,7 +61,7 @@ public class FindLoopTest {
     @Test
     public void whenSort3() {
         int[] input = new int[]{30, 40, 9};
-        int result[] = sort(input);
+        int[] result = sort(input);
         int[] expect = new int[]{9, 30, 40};
         assertThat(result, is(expect));
     }

@@ -7,7 +7,7 @@ public class MatrixCheck {
             for (int column = 1; column < board.length; column++) {
                 char sign = board[row][column];
                 System.out.print(sign);
-                char hasWinVertical = board[row -1][column];
+                char hasWinVertical = board[row - 1][column];
                 char hasWinHor = board[row][column - 1];
                 if (hasWinVertical != sign && hasWinHor != sign) {
                     result = false;
