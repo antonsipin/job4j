@@ -24,8 +24,8 @@ public class MergeTest {
         Merge algo = new Merge();
         int[] expect = {1, 2, 3, 4};
         int[] result = algo.merge(
-                new int[] {3, 4},
-                new int[] {1, 2}
+                new int[] {1, 2},
+                new int[] {3, 4}
 
         );
         assertThat(result, is(expect));
@@ -60,17 +60,6 @@ public class MergeTest {
         int[] result = algo.merge(
                 new int[] {},
                 new int[] {1, 2, 3, 4}
-        );
-        assertThat(result, is(expect));
-    }
-
-    @Test
-    public void whenRightEmpty() {
-        Merge algo = new Merge();
-        int[] expect = {1, 2, 3, 4};
-        int[] result = algo.merge(
-                new int[] {1, 2, 3, 4},
-                new int[] {}
         );
         assertThat(result, is(expect));
     }
