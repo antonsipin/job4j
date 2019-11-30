@@ -1,5 +1,10 @@
 package ru.job4j.array.anton;
 
+/**
+ * Класс Matrix. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Matrix {
     public int[][] multiple(int size) {
         int[][] table = new int[size][size];

@@ -1,5 +1,10 @@
 package ru.job4j;
 
+/**
+ * Класс CarUsage. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class CarUsage {
     public static void main(String[] args) {
         Car audi = new Car();

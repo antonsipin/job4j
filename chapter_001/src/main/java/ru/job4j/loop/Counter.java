@@ -1,5 +1,10 @@
 package ru.job4j.loop;
 
+/**
+ * Класс Counter. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Counter {
     public static int add(int start, int finish) {
         int sum = 0;

@@ -1,5 +1,10 @@
 package ru.job4j.array.anton;
 
+/**
+ * Класс FindLoop. Арифметические операции. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class FindLoop {
     public int indexOf(int[] data, int el) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.

@@ -1,5 +1,10 @@
 package ru.job4j.array.anton;
 
+/**
+ * Класс EndsWith. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class EndsWith {
     public static boolean endsWith(char[] word, char[] post) {
         boolean result = true;

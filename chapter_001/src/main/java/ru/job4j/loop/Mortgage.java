@@ -1,5 +1,10 @@
 package ru.job4j.loop;
 
+/**
+ * Класс Mortgage. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Mortgage {
     public int year(int amount, int salary, double percent) {
         int year = 0;

@@ -1,28 +1,34 @@
 package ru.job4j.convert;
 
+/**
+ * Класс Converter. Арифметические операции. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Converter {
-
-
-    public static double rubleToEuro(int value) {
+    public static double toEuro(int value) {
         return value / 70;
     }
-
-
-    public static double rubleToDollar(double value) {
+    public static double toDollar(double value) {
         return value / 60;
     }
 
+    /**
+     * Метод Main. Вывод результатов в консоль.
+     *
+     * @author Anton Sipin (anton.sipin@gmail.com)
+     */
     public static void main(String[] args) {
         int in = 140;
-        int expectedRubleToEuro = 2;
-        double expectedRubleToDollar = 2.3333333333333335;
-        double outRubleToEuro = rubleToEuro(in);
-        double outRubleToDollar = rubleToDollar(in);
-        boolean passedExpectedRubleToEuro = expectedRubleToEuro == outRubleToEuro;
-        boolean passedExpectedRubleToDollar = expectedRubleToDollar == outRubleToDollar;
-        double euro = rubleToEuro(140);
-        double dollar = rubleToDollar(140);
-        System.out.println("140 rubles are " + euro + " euro. + Test result : " + passedExpectedRubleToEuro);
-        System.out.println("140 rubles are " + dollar + " euro. + Test result : " + passedExpectedRubleToDollar);
+        int Euro = 2;
+        double Dollar = 2.3333333333333335;
+        double toEuro = toEuro(in);
+        double toDollar = toDollar(in);
+        boolean passEuro = Euro == toEuro;
+        boolean passDollar = Dollar == toDollar;
+        double euro = toEuro(140);
+        double dollar = toDollar(140);
+        System.out.println("140 rubles are " + euro + " euro. + Test result : " + passEuro);
+        System.out.println("140 rubles are " + dollar + " euro. + Test result : " + passDollar);
     }
 }

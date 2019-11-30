@@ -1,5 +1,10 @@
 package ru.job4j.loop;
 
+/**
+ * Класс Slash. Арифметические операции. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Slash {
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
@@ -15,6 +20,11 @@ public class Slash {
         System.out.println();
     }
 
+    /**
+     * Метод Main. Арифметические операции. Вывод результатов в консоль.
+     *
+     * @author Anton Sipin (anton.sipin@gmail.com)
+     */
     public static void main(String[] args) {
         System.out.println("Draw by 3");
         draw(3);

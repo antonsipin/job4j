@@ -1,5 +1,10 @@
 package ru.job4j;
 
+/**
+ * Класс Car. Вычисление дистанции и вывод в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Car {
     private double volume;
 
@@ -16,18 +21,15 @@ public class Car {
     public void fill(int gas) {
         this.volume = this.volume + 10 * gas;
     }
-    int age = 35;  // возраст
 
-    char sex = 'м'; // пол
-    int height = 186; // рост
-
-    int count = 12240; // количество кирпичей для постройки дома
-
-    long bacila = 20000000000L; // количество бактерий
-    long distance = 200000000000L; // расстояние до космических объектов
-    boolean isOffer = true; //  разрешение на работу
-
-    long fileSize = 20000000000L; //  размер файла.
+    int age = 35;
+    char sex = 'м';
+    int height = 186;
+    int count = 12240;
+    long bacila = 20000000000L;
+    long distance = 200000000000L;
+    boolean isOffer = true;
+    long fileSize = 20000000000L;
 
     public boolean canDrive() {
         boolean result = this.volume > 0;

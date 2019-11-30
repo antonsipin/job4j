@@ -1,7 +1,11 @@
 package ru.job4j.array.anton;
 
+/**
+ * Класс ArrayChar. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class ArrayChar {
-
     public static boolean startsWith(char[] word, char[] pref) {
         boolean result = true;
         for (int i = 0; i < pref.length; i++) {

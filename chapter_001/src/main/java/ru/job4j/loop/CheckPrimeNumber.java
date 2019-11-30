@@ -1,5 +1,10 @@
 package ru.job4j.loop;
 
+/**
+ * Класс CheckPrimeNumber. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class CheckPrimeNumber {
     public boolean check(int num) {
         boolean prime = false;
@@ -15,5 +20,4 @@ public class CheckPrimeNumber {
         }
         return prime;
     }
-
 }

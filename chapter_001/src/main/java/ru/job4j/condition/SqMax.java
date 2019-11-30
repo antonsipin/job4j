@@ -1,5 +1,10 @@
 package ru.job4j.condition;
 
+/**
+ * Класс SqMax. Операции сравнения.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class SqMax {
     public static int max(int first, int second, int third, int forth) {
         int result = forth;

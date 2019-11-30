@@ -1,5 +1,10 @@
 package ru.job4j.array.anton;
 
+/**
+ * Класс MinDiapason. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class MinDiapason {
     public static int findMin(int[] array, int start, int finish) {
         int min = array[start];

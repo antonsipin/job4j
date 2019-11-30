@@ -1,23 +1,27 @@
 package ru.job4j.condition;
 
+/**
+ * Класс DummyBot. Операции сравнения. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class DummyBot {
-
     public static String answer(String question) {
         String rsl = "Это ставит меня в тупик. Задайте другой вопрос.";
         if ("Привет, Бот.".equals(question)) {
-            // заменить ... на правильный ответ rsl = "ответ по заданию".
             rsl = "Привет, умник.";
             System.out.println(rsl);
-
         } else if ("Пока.".equals(question)) {
-            // заменить ... на проверку, известен ли боту этот вопрос и он знает как на него ответить.
-            // заменить ... на правильный ответ rsl = "ответ по заданию".
             rsl = "До скорой встречи.";
             System.out.println(rsl);
         }
         return rsl;
     }
-
+    /**
+     * Метод Main. Вывод в консоль.
+     *
+     * @author Anton Sipin (anton.sipin@gmail.com)
+     */
     public static void main(String[] args) {
         answer("Привет, Бот.");
     }

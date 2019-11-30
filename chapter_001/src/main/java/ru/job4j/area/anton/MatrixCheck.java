@@ -1,5 +1,10 @@
 package ru.job4j.area.anton;
 
+/**
+ * Класс MatrixCheck. Арифметические операции. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result = true;
@@ -19,6 +24,11 @@ public class MatrixCheck {
         return result;
     }
 
+    /**
+     * Метод Main.
+     *
+     * @param args - аргументы метода.
+     */
     public static void main(String[] args) {
         char[][] hasWinVertical = {
                 {'_', '_', 'X', '_', '_'},

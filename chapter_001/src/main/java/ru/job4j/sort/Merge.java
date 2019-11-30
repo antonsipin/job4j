@@ -2,6 +2,11 @@ package ru.job4j.sort;
 
 import java.util.Arrays;
 
+/**
+ * Класс Merge. Арифметические операции. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Merge {
 
     public int[] merge(int[] left, int[] right) {
@@ -27,6 +32,11 @@ public class Merge {
         return rsl;
     }
 
+    /**
+     * Метод Main. Вывод результатов в консоль.
+     *
+     * @author Anton Sipin (anton.sipin@gmail.com)
+     */
     public static void main(String[] args) {
         Merge process = new Merge();
         int[] rsl = process.merge(

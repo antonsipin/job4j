@@ -6,7 +6,6 @@ package ru.job4j.calculator;
  * @author Anton Sipin (anton.sipin@gmail.com)
  */
 public class Calculator {
-
     public static void add(double first, double second) {
         double result = first + second;
         System.out.println(first + " + " + second + " = " + result);

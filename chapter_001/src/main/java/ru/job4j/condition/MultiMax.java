@@ -1,5 +1,10 @@
 package ru.job4j.condition;
 
+/**
+ * Класс MultiMax. Операции сравнения.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class MultiMax {
     public int max(int first, int second, int third) {
         boolean maxFirstOrSecond = (first > second);

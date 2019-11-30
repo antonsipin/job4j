@@ -1,5 +1,15 @@
+/**
+ * Класс Multiple. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Multiple {
 
+    /**
+     * Метод Main. Вывод результатов в консоль.
+     *
+     * @author Anton Sipin (anton.sipin@gmail.com)
+     */
     public static void main(String[] args) {
         System.out.println("1 * 1 = 1");
         System.out.println("1 * 2 = 2");

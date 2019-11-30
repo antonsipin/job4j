@@ -1,5 +1,10 @@
 package ru.job4j.array.anton;
 
+/**
+ * Класс ArrayChar. Арифметические операции. Вывод результатов в консоль.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Defragment {
     public static String[] compress(String[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -17,6 +22,11 @@ public class Defragment {
         return array;
     }
 
+    /**
+     * Метод Main. Вывод результатов в консоль.
+     *
+     * @author Anton Sipin (anton.sipin@gmail.com)
+     */
     public static void main(String[] args) {
         String[] input = {"I", null, "wanna", null, "be", null, "compressed"};
         String[] compressed = compress(input);

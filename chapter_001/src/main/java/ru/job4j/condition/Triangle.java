@@ -1,5 +1,10 @@
 package ru.job4j.condition;
 
+/**
+ * Класс Triangle. Арифметические операции.
+ *
+ * @author Anton Sipin (anton.sipin@gmail.com)
+ */
 public class Triangle {
     public static boolean exist(double ab, double ac, double bc) {
         boolean result = ((ab + ac) > bc && (ac + bc) > ab && (ab + bc) > ac);
