@@ -1,14 +1,17 @@
 package ru.job4j.condition;
 
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 public class PointTest {
 
     @Test
     public void distance() {
-        double expectedDistance = 2.0;
-        double outDistance = Point.distance(0, 0, 2, 0);
-        Assert.assertEquals(expectedDistance, outDistance, 0.01);
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        double dist = a.distance(b);
+        assertThat(dist, is(2.0));
     }
 }
