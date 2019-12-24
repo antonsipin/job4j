@@ -1,9 +1,7 @@
 package ru.job4j.tracker;
 
-import org.hamcrest.Matcher;
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class TrackerTest {
@@ -15,7 +13,7 @@ public class TrackerTest {
         items[0] = tracker.add(item);
         items[2] = tracker.add(item);
         items[4] = tracker.add(item);
-        Item[] itemsWithoutNull = {item, item, item};
+        Item[] itemsWithoutNull = {item, null, item};
         Item[] result = tracker.findAll(items);
         assertThat(result, is(itemsWithoutNull));
     }
