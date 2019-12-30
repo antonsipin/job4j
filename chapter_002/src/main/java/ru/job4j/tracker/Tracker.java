@@ -4,10 +4,20 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Tracker {
+    public Item[] setItems(Item[] items) {
+        this.items = items;
+        return items;
+    }
+
     /**
      * Массив для хранения заявок.
      */
-    private final Item[] items = new Item[100];
+    private Item[] items = new Item[100];
+
+    public Item[] getItems() {
+        return items;
+    }
+
     /**
      * Указатель ячейки для новой заявки.
      */
@@ -18,10 +28,11 @@ public class Tracker {
      *
      * @param item новая заявка
      */
-    public Item add(Item item) {
+    public Item[] add(Item item) {
         item.setId(this.generateId());
-        items[this.position++] = item;
-        return item;
+        items = Arrays.copyOf(this.items, ++position);
+        items[position - 1] = item;
+        return items;
     }
 
     /**
@@ -65,6 +76,13 @@ public class Tracker {
     }
 
     public Item[] findAll(Item[] items) {
-        return Arrays.copyOf(items, position);
+        int size = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] != null) {
+                this.items[size] = items[i];
+                size++;
+            }
+        }
+        return Arrays.copyOf(this.items, size);
     }
 }
