@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Tracker {
     public Item[] setItems(Item[] items) {
@@ -82,6 +83,36 @@ public class Tracker {
                 this.items[size] = items[i];
                 size++;
             }
+        }
+        return Arrays.copyOf(this.items, size);
+    }
+
+    public Item[] delete(String name) {
+        int size = 0;
+        for (int i = 0; i < items.length; i++) {
+            Item temp = items[i];
+            if (temp.getName().equals(name)) {
+                items[i] = null;
+                this.items[size] = null;
+            }
+            size++;
+        }
+        return Arrays.copyOf(this.items, size);
+    }
+
+    public Item[] replace(String oldName, String newName) {
+        int size = 0;
+        for (int i = 0; i < this.items.length; i++) {
+            Item temp = this.items[i];
+            if (temp != null) {
+                if (temp.getName().equals(oldName)) {
+                    temp.setName(newName);
+                }
+                System.out.println("Id: " + temp.getId() + " Name: " + temp.getName());
+            } else {
+                System.out.println("There are not items to edit");
+            }
+            size++;
         }
         return Arrays.copyOf(this.items, size);
     }
