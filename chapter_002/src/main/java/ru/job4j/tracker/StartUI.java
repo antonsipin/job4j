@@ -16,29 +16,31 @@ public class StartUI {
                 System.out.println("Enter name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
-                items = tracker.add(item);
+                tracker.add(item);
             } else if (select == 1) {
-                Item[] items = tracker.findAll(tracker.getItems());
-                this.items = tracker.setItems(items);
+                this.items = tracker.findAll(tracker.getItems());
                 System.out.println("=== Show all items: ====");
-                for (int i = 0; i < this.items.length; i++) {
+                for (int i = 0; i < tracker.getPosition(); i++) {
                     Item temp = this.items[i];
-                    System.out.println(" Id: " + temp.getId() + " Name: " + temp.getName());
+                    if (temp != null) {
+                        System.out.println(" Id: " + temp.getId() + " Name: " + temp.getName());
+                    }
                 }
                 System.out.println("Число элементов: " + this.items.length);
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
-                System.out.println("Enter item name to rename:");
-                String oldName = scanner.nextLine();
+                System.out.println("Enter item id to replace:");
+                String id = scanner.nextLine();
                 System.out.println("Enter new item name:");
-                String newName = scanner.nextLine();
-                this.items = tracker.replace(oldName, newName);
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                this.items = tracker.replace(id, item);
                 System.out.println("Done");
             } else if (select == 3) {
                 System.out.println("=== Delete item ====");
-                System.out.print("Enter item name to delete the item: ");
-                String name = scanner.nextLine();
-                this.items = tracker.delete(name);
+                System.out.print("Enter item id to delete the item: ");
+                String id = scanner.nextLine();
+                tracker.delete(id);
                 System.out.println("Done");
             } else if (select == 4) {
                 System.out.println("=== Find item by id ====");

@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class TrackerTest {
@@ -11,10 +12,13 @@ public class TrackerTest {
         Item item1 = new Item("test1");
         Item item2 = new Item("test2");
         Item item3 = new Item("test3");
-        Item[] items = {item1, null, item2, null, item3};
-        Item[] itemsWithoutNull = {item1, item2, item3};
+        tracker.add(item1);
+        tracker.add(item2);
+        tracker.add(item3);
+        Item[] items = {item1, item2, item3};
+        Item[] itemsResult = {item1, item2, item3};
         Item[] result = tracker.findAll(items);
-        assertThat(result, is(itemsWithoutNull));
+        assertThat(result, is(itemsResult));
     }
 
     @Test
@@ -37,35 +41,29 @@ public class TrackerTest {
         Item item1 = new Item("Item");
         item1.setId(item1.getId());
         tracker.add(item1);
-        Item result = tracker.findById("Item1");
+        Item result = tracker.findById(item1.getId());
         assertThat(result, is(item1));
     }
 
     @Test
-    public void delete() {
+    public void whenDelete() {
         Tracker tracker = new Tracker();
-        Item item1 = new Item("test1");
-        Item item2 = new Item("test2");
-        Item item3 = new Item("test3");
-        tracker.add(item1);
-        tracker.add(item2);
-        tracker.add(item3);
-        Item[] result = tracker.delete("test1");
-        Item[] expectedResult = {null, item2, item3};
-        assertThat(result, is(expectedResult));
+        Item bug = new Item("Bug");
+        tracker.add(bug);
+        String id = bug.getId();
+        int index = tracker.indexOf(id);
+        tracker.delete(id);
+        assertThat(tracker.getItems()[index], is(nullValue()));
     }
 
     @Test
-    public void replace() {
+    public void whenReplace() {
         Tracker tracker = new Tracker();
-        Item item1 = new Item("test1");
-        Item item2 = new Item("test2");
-        Item item3 = new Item("test3");
-        tracker.add(item1);
-        tracker.add(item2);
-        tracker.add(item3);
-        Item[] result = tracker.replace("test1", "Item1");
-        Item[] expectedResult = {item1, item2, item3};
-        assertThat(result, is(expectedResult));
+        Item bug = new Item("Bug");
+        tracker.add(bug);
+        String id = bug.getId();
+        Item bugWithDesc = new Item("Bug with description");
+        tracker.replace(id, bugWithDesc);
+        assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
 }

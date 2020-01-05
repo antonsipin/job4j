@@ -2,14 +2,8 @@ package ru.job4j.tracker;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Tracker {
-    public Item[] setItems(Item[] items) {
-        this.items = items;
-        return items;
-    }
-
     /**
      * Массив для хранения заявок.
      */
@@ -17,6 +11,10 @@ public class Tracker {
 
     public Item[] getItems() {
         return items;
+    }
+
+    public int getPosition() {
+        return position;
     }
 
     /**
@@ -29,11 +27,10 @@ public class Tracker {
      *
      * @param item новая заявка
      */
-    public Item[] add(Item item) {
+    public Item add(Item item) {
         item.setId(this.generateId());
-        items = Arrays.copyOf(this.items, ++position);
-        items[position - 1] = item;
-        return items;
+        items[this.position++] = item;
+        return item;
     }
 
     /**
@@ -47,23 +44,10 @@ public class Tracker {
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
 
-    public Item findById(String id) {
-        Item result = null;
-        for (int i = 0; i < this.position; i++) {
-            Item item = this.items[i];
-            String temp = item.getId();
-            if (temp.equals(id)) {
-                result = item;
-                break;
-            }
-        }
-        return result;
-    }
-
     public Item[] findByName(String key) {
-        Item[] itemsResult = new Item[this.items.length];
+        Item[] itemsResult = new Item[position];
         int size = 0;
-        for (int index = 0; index < this.items.length; index++) {
+        for (int index = 0; index < position; index++) {
             Item name = this.items[index];
             if (name != null) {
                 if (name.getName().equals(key)) {
@@ -77,43 +61,52 @@ public class Tracker {
     }
 
     public Item[] findAll(Item[] items) {
-        int size = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null) {
-                this.items[size] = items[i];
-                size++;
-            }
-        }
-        return Arrays.copyOf(this.items, size);
+        return Arrays.copyOf(items, position);
     }
 
-    public Item[] delete(String name) {
-        int size = 0;
-        for (int i = 0; i < items.length; i++) {
-            Item temp = items[i];
-            if (temp.getName().equals(name)) {
-                items[i] = null;
-                this.items[size] = null;
-            }
-            size++;
+    public void delete(String id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            int start = indexOf(id) + 1;
+            int distPos = indexOf(id);
+            int size = position - indexOf(id);
+            System.arraycopy(items, start, items, distPos, size);
+            items[position] = null;
+            position--;
+        } else {
+            System.out.println("There is not item which has this id");
         }
-        return Arrays.copyOf(this.items, size);
     }
 
-    public Item[] replace(String oldName, String newName) {
-        int size = 0;
-        for (int i = 0; i < this.items.length; i++) {
-            Item temp = this.items[i];
-            if (temp != null) {
-                if (temp.getName().equals(oldName)) {
-                    temp.setName(newName);
-                }
-                System.out.println("Id: " + temp.getId() + " Name: " + temp.getName());
-            } else {
-                System.out.println("There are not items to edit");
-            }
-            size++;
+    public Item[] replace(String id, Item item) {
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(items[index].getId());
+            items[index] = item;
+        } else {
+            System.out.println("There is not item which has this id");
         }
-        return Arrays.copyOf(this.items, size);
+        return items;
+    }
+
+    int indexOf(String id) {
+        int rsl = -1;
+        for (int index = 0; index < position; index++) {
+            if (items[index].getId().equals(id)) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    public Item findById(String id) {
+        Item result = null;
+        if (indexOf(id) == -1) {
+            System.out.println("There is not item which has this id");
+        } else {
+            result = items[indexOf(id)];
+        }
+        return result;
     }
 }
