@@ -67,9 +67,9 @@ public class Tracker {
     public void delete(String id) {
         int index = indexOf(id);
         if (index != -1) {
-            int start = indexOf(id) + 1;
-            int distPos = indexOf(id);
-            int size = position - indexOf(id);
+            int start = index + 1;
+            int distPos = index;
+            int size = position - index;
             System.arraycopy(items, start, items, distPos, size);
             items[position] = null;
             position--;
@@ -101,11 +101,12 @@ public class Tracker {
     }
 
     public Item findById(String id) {
+        int index = indexOf(id);
         Item result = null;
-        if (indexOf(id) == -1) {
-            System.out.println("There is not item which has this id");
+        if (index != -1) {
+            result = items[index];
         } else {
-            result = items[indexOf(id)];
+            System.out.println("There is not item which has this id");
         }
         return result;
     }
