@@ -18,7 +18,7 @@ public class MagicBall {
         return answer;
     }
 
-        public static void main (String[]args) {
+        public static void main(String[]args) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Я великий Оракул. Что ты хочешь узнать?");
             String question = scanner.nextLine();
