@@ -64,7 +64,8 @@ public class Tracker {
         return Arrays.copyOf(items, position);
     }
 
-    public void delete(String id) {
+    public boolean delete(String id) {
+        boolean rsl = false;
         int index = indexOf(id);
         if (index != -1) {
             int start = index + 1;
@@ -73,20 +74,20 @@ public class Tracker {
             System.arraycopy(items, start, items, distPos, size);
             items[position] = null;
             position--;
-        } else {
-            System.out.println("There is not item which has this id");
+            rsl = true;
         }
+        return rsl;
     }
 
-    public Item[] replace(String id, Item item) {
+    public boolean replace(String id, Item item) {
+        boolean rsl = false;
         int index = indexOf(id);
         if (index != -1) {
             item.setId(items[index].getId());
             items[index] = item;
-        } else {
-            System.out.println("There is not item which has this id");
+            rsl = true;
         }
-        return items;
+        return rsl;
     }
 
     int indexOf(String id) {

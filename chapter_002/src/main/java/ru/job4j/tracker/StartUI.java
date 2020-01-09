@@ -28,15 +28,21 @@ public class StartUI {
         System.out.println("Enter new item name:");
         String name = input.askStr("Enter new item name:");
         Item item = new Item(name);
-        items = tracker.replace(id, item);
-        System.out.println("Done");
+        if (tracker.replace(id, item)) {
+            System.out.println("Done");
+        } else {
+            System.out.println("There is not item which has this id");
+        }
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ====");
         String id = input.askStr("Enter item id to delete the item: ");
-        tracker.delete(id);
-        System.out.println("Done");
+        if (tracker.delete(id)) {
+            System.out.println("Done");
+        } else {
+            System.out.println("There is not item which has this id");
+        }
     }
 
     public static void findItemById(Input input, Tracker tracker) {
