@@ -18,11 +18,11 @@ public class SquareTest {
                 square.draw(),
                 is(
                         new StringBuilder()
-                                .append("++++")
-                                .append("+     +")
-                                .append("+     +")
-                                .append("++++")
-                                .toString()
+                        .append(" +++++" + '\n')
+                        .append("+     +" + '\n')
+                        .append("+     +" + '\n')
+                        .append(" +++++"  + '\n')
+                        .toString()
                 )
         );
     }

@@ -18,11 +18,11 @@ public class TriangleTest {
                 triangle.draw(),
                 is(
                         new StringBuilder()
-                                .append("   +")
-                                .append(" +   +")
-                                .append("+     +")
-                                .append("++++")
-                                .toString()
+                        .append("   +" + '\n')
+                        .append(" +   +" + '\n')
+                        .append("+     +" + '\n')
+                        .append(" +++++" + '\n')
+                        .toString()
                 )
         );
     }
