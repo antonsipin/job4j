@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.StringJoiner;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -54,11 +56,13 @@ public class PaintTest {
         assertThat(
                 triangle.draw(),
                 is(
-                        new StringBuilder()
-                                .append("   +" + '\n')
-                                .append(" +   +" + '\n')
-                                .append("+     +" + '\n')
-                                .append(" +++++" + '\n')
+                        new StringJoiner(
+                                System.lineSeparator(), "",
+                                System.lineSeparator())
+                                .add("   +")
+                                .add(" +   +")
+                                .add("+     +")
+                                .add(" +++++")
                                 .toString()
                 )
         );
