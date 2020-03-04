@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Tracker {
+class Tracker {
     /**
      * Массив для хранения заявок.
      */
