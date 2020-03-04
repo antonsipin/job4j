@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.TrackerSingle;
 
-public class TrackerSingle2 {
+class TrackerSingle2 {
     private static final TrackerSingle2 INSTANCE = new TrackerSingle2();
 
     public TrackerSingle2() {
