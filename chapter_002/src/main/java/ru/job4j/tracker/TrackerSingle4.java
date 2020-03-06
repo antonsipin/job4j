@@ -11,6 +11,6 @@ enum TrackerSingle4 {
     }
 
     public static void main(String[] args) {
-        TrackerSingle4 trackerSingle4 = TrackerSingle4.INSTANCE;
+        TrackerSingle4 tracker = TrackerSingle4.INSTANCE;
     }
 }

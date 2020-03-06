@@ -3,14 +3,14 @@ package ru.job4j.tracker;
 import ru.job4j.tracker.Item;
 
 class TrackerSingle3 {
-    private static TrackerSingle3 instance;
+    private static Tracker instance;
 
     private TrackerSingle3() {
     }
 
-    public static TrackerSingle3 getInstance() {
+    public static Tracker getInstance() {
         if (instance == null) {
-            instance = new TrackerSingle3();
+            instance = new Tracker();
         }
         return instance;
     }
