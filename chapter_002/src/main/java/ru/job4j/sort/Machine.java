@@ -10,17 +10,28 @@ public class Machine {
         int[] rsl = new int[100];
         int size = 0;
         int balance = money - price;
-        for (int j = 0; j < COINS.length; j++) {
-            while (balance > 0) {
-                for (int i = 0; i < rsl.length; i++) {
+        int count = 0;
+        while (balance != 0) {
+            for (int j = 0; j < COINS.length - 1; j++) {
+                for (int i = count; i < rsl.length; i++) {
                     balance = balance - COINS[j];
                     rsl[i] = COINS[j];
                     size++;
                     if (balance < 0) {
                         rsl[i] = COINS[j + 1];
-                        balance = balance + COINS[j + 1];
+                        balance = balance + COINS[j] - COINS[j + 1];
+                        count = i + 1;
                         break;
+                    } else {
+                        if (balance == 1) {
+                            rsl[i + 1] = COINS[j + 2];
+                            balance = 0;
+                            break;
+                        }
                     }
+                }
+                if (balance == 0) {
+                    break;
                 }
             }
         }
