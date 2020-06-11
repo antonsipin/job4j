@@ -53,4 +53,12 @@ public class MachineTest {
         int[] rsl = machine.change(100, 32);
         assertThat(rsl, is(expected));
     }
+
+    @Test
+    public void when50by32() {
+        Machine machine = new Machine();
+        int[] expected = {10, 5, 2, 1};
+        int[] rsl = machine.change(50, 32);
+        assertThat(rsl, is(expected));
+    }
 }
