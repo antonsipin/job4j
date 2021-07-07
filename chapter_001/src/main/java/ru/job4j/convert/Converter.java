@@ -20,12 +20,12 @@ public class Converter {
      */
     public static void main(String[] args) {
         int in = 140;
-        int Euro = 2;
-        double Dollar = 2.3333333333333335;
+        int euro1 = 2;
+        double dollar1 = 2.3333333333333335;
         double toEuro = toEuro(in);
         double toDollar = toDollar(in);
-        boolean passEuro = Euro == toEuro;
-        boolean passDollar = Dollar == toDollar;
+        boolean passEuro = euro1 == toEuro;
+        boolean passDollar = dollar1 == toDollar;
         double euro = toEuro(140);
         double dollar = toDollar(140);
         System.out.println("140 rubles are " + euro + " euro. + Test result : " + passEuro);
